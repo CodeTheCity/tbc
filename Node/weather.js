@@ -1,16 +1,12 @@
 var apikeysjs = require('./apikeys')
-var request = require('request')
-var locationjs = require('./location')
-var requestLimit = 100
 var test_mode = true //false
 
 exports.simple = function(req, res, next){
+    var LatLon = 0
+    var requestLimit = 100
     key = apikeysjs.darksky()
     var request = require('request');
-    var data = ""
-    LatLon = locationjs.idToLatLon(req)
-//    var time = 255657600
-//    var time = Math.round(new Date("2017-09-15 00:00:00.000").getTime()/1000);
+    id = req.query.id
     try{
         var EndTime = Math.round(new Date(req.query.end_date).getTime()/1000);
     } catch (e){
@@ -32,7 +28,19 @@ exports.simple = function(req, res, next){
         if (!requestLimit){
             return (False)
         }
-
+        if (!LatLon){
+            API_CALL = 'http://api.luftdaten.info/v1/sensor/' + id + '/' 
+            request(API_CALL, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    data = JSON.parse(body)
+                    lat = data[0].location.latitude
+                    lon = data[1].location.longitude
+                    console.log('latlong = ' + [lat, lon])
+                    LatLon = [lat,lon]
+                    APIrequest(jsondata)
+                }
+            })
+        }
         API_CALL = url + LatLon[0] +',' + LatLon[1] + ',' + time + '?exlude=currently,minutely,daily,alerts,flags'        
         request(API_CALL, function (error, response, body) {
             if (!error && response.statusCode == 200) {
@@ -48,5 +56,4 @@ exports.simple = function(req, res, next){
             }
         })
     }
-//return (data)
 }
