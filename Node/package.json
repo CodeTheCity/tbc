@@ -1,0 +1,28 @@
+{
+  "name": "fart",
+  "version": "1.0.0",
+  "description": "fart api for air quality related data",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeTheCity/tbc.git"
+  },
+  "keywords": [
+    "air",
+    "quality"
+  ],
+  "author": "gavbarnett",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodeTheCity/tbc/issues"
+  },
+  "homepage": "https://github.com/CodeTheCity/tbc#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "restify": "^7.7.0"
+  }
+}
