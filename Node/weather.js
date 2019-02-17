@@ -36,13 +36,13 @@ exports.simple = function(req, res, next){
         request(API_CALL, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 data = JSON.parse(body)
-                jsondata = jsondata.concat(data.hourly.data)
+                jsondata = (data.hourly.data).concat(jsondata)
                 if (time>StartTime ){
                     time -= (86400*2)
                     APIrequest(jsondata)
                     console.log('loop ' + time + ", requestLimit = " + requestLimit )
                 } else {
-                    res.send(data.hourly.data)
+                    res.send(jsondata)
                 }
             }
         })
