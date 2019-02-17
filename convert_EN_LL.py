@@ -1,19 +1,5 @@
 from convertbng.util import convert_bng, convert_lonlat
-'''
-# convert a single value
-res = convert_bng(lon, lat)
 
-# convert lists of longitude and latitude values to OSGB36 Eastings and Northings, using OSTN15 corrections
-lons = [lon1, lon2, lon3]
-lats = [lat1, lat2, lat3]
-res_list = convert_bng(lons, lats)
-
-# convert lists of BNG Eastings and Northings to longitude, latitude
-eastings = [easting1, easting2, easting3]
-northings = [northing1, northing2, northing3]
-res_list_en = convert_lonlat(eastings, northings)
-
-'''
 coords = [[394400,809000],
 [393250,805600],
 [391560,808000],
@@ -81,4 +67,3 @@ with open ("lat_lng.csv", "a") as outfile:
 
 	for x in range(0,57):
 		outfile.write (str(res_list_en[0][x]) + "," + str(res_list_en[1][x]) + "\n")
-
