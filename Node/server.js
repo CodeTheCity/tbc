@@ -18,7 +18,14 @@ function help(req, res, next) {
     if (test_mode) {console.log('reponded to request for help')}
     jsondata = {
         "help":"API options",
-        "weather":{"id":"device id", "start_date":"unix time, UTC time zone", "end_date":"unix time, UTC time zone"}
+        "weather":{
+            "params":{
+            },
+            "args":{
+                "id":"device id", 
+                "start_date":"yyyy-mm-dd <or> dd-mm-yyyy <or> dd-mmm-yyyy",
+                "end_date":"yyyy-mm-dd <or> dd-mm-yyyy <or> dd-mmm-yyyy"}
+            }
     }
     res.send(jsondata)
     next();
