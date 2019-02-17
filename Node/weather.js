@@ -19,10 +19,9 @@ exports.simple = function(req, res, next){
     } catch (e){
         var StartTime = Endtime - (86400*2) //minus 2 days as date comes in 2 day chunks
     }
-    var time = Math.round(new Date(req.query.end_date).getTime()/1000);
+    var time = EndTime
     //https://api.darksky.net/forecast/[key]/[latitude],[longitude],[time]
     var url = 'https://api.darksky.net/forecast/' + key + '/'
-    API_CALL = url + LatLon[0] +',' + LatLon[1] + ',' + time + '?exlude=currently,minutely,daily,alerts,flags'
     var jsondata = []
     APIrequest(jsondata)
 
