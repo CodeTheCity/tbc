@@ -1,6 +1,7 @@
-var restify = require('restify');
+var restify = require('restify')
+var apikeysjs = require('./apikeys')
 var locationjs = require('./location')
-//var weatherjs = require('./weather')
+var weatherjs = require('./weather')
 //var trafficjs = require('./traffic')
 //var pollutionjs = require('./pollution')
 var test_mode = true //false
@@ -12,7 +13,7 @@ function weather(req, res, next) {
     }
     LatLon = locationjs.idToLatLon(req)
     jsondata = LatLon
-    //jsondata = weatherjs.simple(req)
+    jsondata = weatherjs.simple(req)
     res.send(jsondata)
     next();
 }
