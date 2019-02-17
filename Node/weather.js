@@ -34,8 +34,9 @@ exports.simple = function(req, res, next){
                 if (!error && response.statusCode == 200) {
                     data = JSON.parse(body)
                     lat = data[0].location.latitude
-                    lon = data[1].location.longitude
+                    lon = data[0].location.longitude
                     console.log('latlong = ' + [lat, lon])
+                    console.log('altitude = ' + data[0].location.altitude)
                     LatLon = [lat,lon]
                     APIrequest(jsondata)
                 }
