@@ -33,12 +33,18 @@ exports.simple = function(req, res, next){
             request(API_CALL, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     data = JSON.parse(body)
-                    lat = data[0].location.latitude
-                    lon = data[0].location.longitude
-                    console.log('latlong = ' + [lat, lon])
-                    console.log('altitude = ' + data[0].location.altitude)
-                    LatLon = [lat,lon]
-                    APIrequest(jsondata)
+                    console.log(data)
+                    if (data.length>1){
+                        lat = data[0].location.latitude
+                        lon = data[0].location.longitude
+                        console.log('latlong = ' + [lat, lon])
+                        console.log('altitude = ' + data[0].location.altitude)
+                        LatLon = [lat,lon]
+                        APIrequest(jsondata)
+                    } else {
+                        console.log ('ERROR: no sensor found')
+                        res.send('False: no sensor found')
+                    }
                 }
             })
         }
