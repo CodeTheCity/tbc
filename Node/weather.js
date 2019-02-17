@@ -2,6 +2,8 @@ var apikeysjs = require('./apikeys')
 var request = require('request')
 var locationjs = require('./location')
 var requestLimit = 100
+var test_mode = true //false
+
 exports.simple = function(req, res, next){
     key = apikeysjs.darksky()
     var request = require('request');
@@ -39,7 +41,7 @@ exports.simple = function(req, res, next){
                 if (time>StartTime ){
                     time -= (86400*2)
                     APIrequest(jsondata)
-                    console.log('loop ' + time + ", requestLimit = " + requestLimit )
+                    if (test_mode) {console.log('loop ' + time + ", requestLimit = " + requestLimit )}
                 } else {
                     res.send(jsondata)
                 }
