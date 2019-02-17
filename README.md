@@ -11,7 +11,7 @@ where:
 * **id** = sensor luftdaten ID
 * **end_date** = the most recent date your interested in. (this is resolved in unix time)
 
-this returns weather day for 2 days at an hourly interval from Dark Sky. The format is:
+this returns weather data for the 2 previous days at an hourly interval from Dark Sky. The format is:
 
         {
             "latitude":57.128,
