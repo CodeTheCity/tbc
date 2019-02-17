@@ -4,7 +4,7 @@ exports.idToLatLon = function(req){
     lat = 0
     lon = 0
     id = req.query.id
-    
+
     switch(id){
         case '5331':
             lat = 57.128
@@ -20,8 +20,8 @@ exports.idToLatLon = function(req){
             break
         case '8733':
             lat = 57.136
-            long = -2.107
+            lon = -2.107
             break
     }
-    return ([id, lat, lon])
+    return ([lat, lon])
 }
