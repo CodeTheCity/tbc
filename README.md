@@ -10,7 +10,6 @@ Where:
 
 * **id** = sensor luftdaten ID
 * **end_date** = the most recent date your interested in. (defaults to today)
-
 * **start_date** = the most historic date your interested in. (defaults to 2 days before today)
 
 This returns weather data in an hourly interval from Dark Sky between the given dates. The format is:
