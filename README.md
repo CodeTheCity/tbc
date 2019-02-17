@@ -16,40 +16,40 @@ This returns weather data in an hourly interval from Dark Sky between the given 
 
         [
             {
-            time: 1546300800,
-            summary: "Overcast",
-            icon: "cloudy",
-            precipType: "rain",
-            temperature: 46.86,
-            apparentTemperature: 40.35,
-            dewPoint: 35.6,
-            humidity: 0.65,
-            windSpeed: 16.1,
-            windBearing: 281,
-            cloudCover: 1,
-            uvIndex: 0,
-            visibility: 6.22
+                time: "2019-01-01T00:00:00.000Z",
+                summary: "Overcast",
+                icon: "cloudy",
+                precipType: "rain",
+                temperature: 46.95,
+                apparentTemperature: 40.47,
+                dewPoint: 35.6,
+                humidity: 0.64,
+                windSpeed: 16.1,
+                windBearing: 281,
+                cloudCover: 1,
+                uvIndex: 0,
+                visibility: 6.22,
+                UTC: 1546300800
             },
             {
-            time: 1546304400,
-            summary: "Partly Cloudy",
-            icon: "partly-cloudy-night",
-            precipType: "rain",
-            temperature: 45.04,
-            apparentTemperature: 37.73,
-            dewPoint: 30.19,
-            humidity: 0.56,
-            windSpeed: 17.22,
-            windGust: 36.91,
-            windBearing: 300,
-            cloudCover: 0.44,
-            uvIndex: 0,
-            visibility: 6.22
+                time: "2019-01-01T01:00:00.000Z",
+                summary: "Partly Cloudy",
+                icon: "partly-cloudy-night",
+                precipType: "rain",
+                temperature: 45.14,
+                apparentTemperature: 37.85,
+                dewPoint: 30.19,
+                humidity: 0.56,
+                windSpeed: 17.22,
+                windGust: 36.91,
+                windBearing: 300,
+                cloudCover: 0.44,
+                uvIndex: 0,
+                visibility: 6.22,
+                UTC: 1546304400
             },
             {
-            time: 1546308000,
-            summary: "Mostly Cloudy",
-            icon: "partly-cloudy-night",
-            precipType: "rain",
-            :
-            : and so on. for 48hrs
+                time: "2019-01-01T02:00:00.000Z",
+                summary: "Mostly Cloudy",
+                :
+                : and so on.

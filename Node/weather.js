@@ -58,6 +58,10 @@ exports.simple = function(req, res, next){
                     APIrequest(jsondata)
                     if (test_mode) {console.log('loop ' + time + ", requestLimit = " + requestLimit )}
                 } else {
+                    jsondata.forEach(function(element) {
+                        element.UTC = element.time
+                        element.time = new Date(element.time * 1e3).toISOString()
+                    });
                     res.send(jsondata)
                 }
             }
