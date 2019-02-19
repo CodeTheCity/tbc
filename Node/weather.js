@@ -54,7 +54,7 @@ exports.simple = function(req, res, next){
                 data = JSON.parse(body)
                 jsondata = (data.hourly.data).concat(jsondata)
                 if (time>StartTime ){
-                    time -= (86400*2)
+                    time -= (86400*1)
                     APIrequest(jsondata)
                     if (test_mode) {console.log('loop ' + time + ", requestLimit = " + requestLimit )}
                 } else {

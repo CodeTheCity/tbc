@@ -1,6 +1,6 @@
 
 function main() {
-    const url = 'http://localhost:8080/weather?id=5331&start_date=10-Jan-2019&end_date=15-Jan-2019'
+    const url = 'http://localhost:8080/weather?id=5331&start_date=01-Dec-2018&end_date=15-Jan-2019'
     fetch(url).then(
         response => response.json()).then(function(data){
             console.log(data)
