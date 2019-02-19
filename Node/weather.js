@@ -48,7 +48,7 @@ exports.simple = function(req, res, next){
                 }
             })
         }
-        API_CALL = url + LatLon[0] +',' + LatLon[1] + ',' + time + '?exlude=currently,minutely,daily,alerts,flags'        
+        API_CALL = url + LatLon[0] +',' + LatLon[1] + ',' + time + '?units=si&exlude=currently,minutely,daily,alerts,flags'        
         request(API_CALL, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 data = JSON.parse(body)
