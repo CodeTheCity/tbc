@@ -62,6 +62,7 @@ exports.simple = function(req, res, next){
                         element.UTC = element.time
                         element.time = new Date(element.time * 1e3).toISOString()
                     });
+                    console.log('Completed')
                     res.send(jsondata)
                 }
             }
