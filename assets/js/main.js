@@ -5,17 +5,23 @@ function main() {
         response => response.json()).then(function(data){
             console.log(data)
             varx = data.map(function(obj){return obj.time})
-            console.log(varx)
+            vary2 = data.map(function(obj){return obj.apparentTemperature})
             vary = data.map(function(obj){return obj.temperature})
-            console.log(vary)
             var temperature = {
                  x: varx,
                  y: vary,
                  mode: 'lines',
                  type: 'scatter',
-                 name: 'bob'
+                 name: 'temperature'
                  };
-            var data = [temperature]
+            var temperature2 = {
+                x: varx,
+                y: vary2,
+                mode: 'lines',
+                type: 'scatter',
+                name: 'apparent_temp'
+                };
+            var data = [temperature,temperature2]
             Plotly.newPlot('myDiv', data);
         })
 
