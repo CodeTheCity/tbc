@@ -7,6 +7,7 @@ var weatherjs = require('./weather')
 var test_mode = true //false
 
 function weather(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
     if (test_mode) {
       console.log('reponded to request for weather')
       console.log(req.query)
